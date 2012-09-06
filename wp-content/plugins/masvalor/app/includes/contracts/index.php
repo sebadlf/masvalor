@@ -9,36 +9,37 @@
 <body style="margin: 0px auto; width: 600px;">
 <br>
 
-<?php $date= date("d-m-Y");
+<?php 
+	  $date= date("d-m-Y");
       $date2 = explode("-",$date);																		
 	  $dia = $date2[0];
 	  $mes = $date2[1];
 	  $anio = $date2[2];
 	  
 	  $mesret = "";
-	  if($mes == 01)
+	  if($mes == "01")
 	    $mesret = "Enero";
-	  if($mes == 02)
+	  if($mes == "02")
 		$mesret = "Febrero";
-	  if($mes == 03)	  
+	  if($mes == "03")	  
 	    $mesret = "Marzo";
-	  if($mes == 04)
+	  if($mes == "04")
 		$mesret = "Abril";
-	  if($mes == 05)
+	  if($mes == "05")
 		$mesret = "Mayo";
-	  if($mes == 06)
+	  if($mes == "06")
 		$mesret = "Junio";
-	  if($mes == 07)
+	  if($mes == "07")
 	     $mesret = "Julio";
-	  if($mes == 08)
+	  if($mes == "08")
 	      $mesret = "Agosto";
-	  if($mes == 09)
+	  if($mes == "09")
 	      $mesret = "Septiembre";
-	  if($mes == 10)
+	  if($mes == "10")
 	      $mesret = "Octubre";
-	  if($mes == 11)
+	  if($mes == "11")
 	    $mesret = "Noviembre";
-	 if($mes == 11)
+	  if($mes == "12")
 	    $mesret = "Diciembre"; 	
 	  ?>
 

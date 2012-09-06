@@ -47,7 +47,7 @@ function Active(cid){
 <script language="javascript" type="text/javascript">
 
 function saveDelete(cid){
-    if(confirm("¿Est\u00e1 seguro que quiere borrar el doctor?")) {
+    if(confirm("ï¿½Est\u00e1 seguro que quiere borrar el doctor?")) {
 	   document.forms['adminForm'].task.value = 'delete';
 	   document.forms['adminForm'].cid.value = cid;
 	   document.forms['adminForm'].submit(); 
@@ -83,8 +83,7 @@ a{
 	cursor:pointer;
 }
 </style>   
-       
-											
+       									
 			<div id="table_noticia" style=" font-size: 14px;margin-left: -55px;width: 733px;">
 				<form action="" method="post" name="tinymce" id="adminForm">	
 					<h2 style="margin-left:26px;"><?php echo __('Doctores') ?></h2>
@@ -105,7 +104,9 @@ a{
 									 <option value="prt.title"><?php echo __('T&iacute;tulo') ?></option>
 									 <option value="actived"><?php echo __('Estado') ?></option>
 								</select>	
-							   <button onclick="this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
+								<BR>
+							
+							   <button onclick="this.form.action = '<?php echo masvalor_getUrl().'/doctors/' ?>'; this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
 							  <button style="padding-top: 2px;" onclick="document.getElementById('search').value='';this.form.getElementById('filter_state').value='-1';this.form.submit();">Reset</button>
 						    </div>	
 							
@@ -189,27 +190,43 @@ a{
 
 
 							  </table>
+							  
+									  
+							<div class="paginator" style="margin-left:16px">
+									<?php 
+									$pages = ceil($V->count/$V->itemsPerPage);
+									if ($pages > 1)
+										for ($i=1;$i<=$pages;$i++){
+											$pageLink = masvalor_getUrl().'/doctors/&limitstart='.(($i-1)*$V->itemsPerPage);
+											
+											ECHO "<BR>".$pageLink. "<BR>";
+											
+											if ($V->currPage != $i)
+												$href = '<a href='.$pageLink.'>'.$i.'</a>';
+											else
+												$href = $i;
+											if ($i==1)
+												echo $href;
+											else
+												echo ' - '.$href;
+										}
+									?>
+							</div>
+							  
+							  
+							Registros: <?php echo count($V->datas); ?>
+
+							
 						</td>
-					</tr>		
+					</tr>	
+					
+					
+						
 				   </table> 
 				   				   
-					<div class="paginator" style="margin-left:16px">
-							<?php 
-							$pages = ceil($V->count/$V->itemsPerPage);
-							if ($pages > 1)
-								for ($i=1;$i<=$pages;$i++){
-									$pageLink = masvalor_getUrl().'/doctors/&limitstart='.(($i-1)*$V->itemsPerPage);
-									if ($V->currPage != $i)
-										$href = '<a href='.$pageLink.'>'.$i.'</a>';
-									else
-										$href = $i;
-									if ($i==1)
-										echo $href;
-									else
-										echo ' - '.$href;
-								}
-							?>
-					</div>
+					
+				   
+				    
 				   
 					<input type="hidden" name="cid" value="" />	
 					<input type="hidden" name="task" value="" />

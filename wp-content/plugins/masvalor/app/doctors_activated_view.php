@@ -99,11 +99,16 @@ a{
 													  ($result->title_tesis != '' && $result->title_tesis != null)&& ($result->identity_number != '' && $result->identity_number != null) &&
 													  ($result->title_grad != '' && $result->title_grad != null) ) { ?>					
 												<tr style="background-color:#eeeeee;">
-													<td><?php echo $result->name;?></td>
+													<td>
+														 
+														 <a href="/?page_id=425/doctor-profile/&cid=<?php $result->userid; ?>" target="_blank" ><?php echo $result->name;?></a>
+													</td>
 													<td><?php echo $result->lastname;?></td>
 													<td><?php echo $result->name_dis;?></td>
 													<td><?php echo $result->title;?></td>
-													<td align="center"> <input id="actived" type="checkbox" onclick="checkUncheckAll('<?php echo $result->userid; ?>')" name="actived"><br></td>											
+													<td align="center"> 
+														<input id="actived" type="checkbox" onclick="checkUncheckAll('<?php echo $result->userid; ?>')" name="actived"><br>
+													</td>											
 												</tr>
 											<?php } ?>
 																					 

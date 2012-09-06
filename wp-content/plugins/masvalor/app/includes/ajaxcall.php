@@ -10,8 +10,9 @@ add_action('wp_ajax_nopriv_get_langs', 'get_langs_callback');
 
 function get_langs_callback() {
 	$comboid = $_POST['comboid'];
+	$value = $_POST['value'];
 	$comboUtils = new mv_comboUtils();
-	echo $comboUtils->getLanguages(null,$comboid);
+	echo $comboUtils->getLanguages($value,$comboid);
 	die();
 }
 

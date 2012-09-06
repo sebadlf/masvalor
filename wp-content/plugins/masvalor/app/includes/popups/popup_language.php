@@ -23,7 +23,7 @@ jQuery(document).ready(function($){
 
 	// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
 	jQuery.post('../../../../../../wp-admin/admin-ajax.php', data, function(response) {
-		document.getElementById('comboLang').innerHTML = response;
+		document.getElementById('comboLang').innerHTML = response;		
 	});
 	
 	var data = {
