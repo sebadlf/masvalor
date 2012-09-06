@@ -934,7 +934,7 @@ class mv_comboUtils {
 	//Contruct Disciplines group combo
 	public function getDisciplines($selected,$id,$id_sub_group){
 			global $wpdb;
-			$sql = 'SELECT name,id FROM '.$wpdb->prefix.'masvalor_disciplines WHERE id_subbranch='.$id_sub_group;
+			$sql = 'SELECT name, id FROM '.$wpdb->prefix.'masvalor_disciplines WHERE id_subbranch='.$id_sub_group . " Order By name";
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			ob_start();
 			?>
@@ -1210,7 +1210,7 @@ class mv_comboUtils {
 	public function getDoctors($selected,$id='doctors'){
 			
 			global $wpdb;
-			$sql = 'SELECT userid, CONCAT(lastname," - ",name) as name FROM '.$wpdb->prefix.'masvalor_profiles WHERE actived = 1 ';
+			$sql = 'SELECT userid, CONCAT(lastname," - ",name) as name FROM '.$wpdb->prefix.'masvalor_profiles WHERE actived = 1 ORDER BY name';
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			ob_start();
 			
