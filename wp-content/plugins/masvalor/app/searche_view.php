@@ -679,7 +679,7 @@ function isChecked($estado){
 													</tr>
 													
 													<tr>
-														<td class="key" style="padding-top: 2px;vertical-align: top;"><?php echo __('Subdisciplinas Requeridas') ?></td>
+														<td class="key" style="padding-top: 2px;vertical-align: top;"><?php echo __('Disciplinas Requeridas') ?></td>
 														<td><input id="addDiscipline" onclick="show_popup_diciplines()" type="button"  value ="Agregar" /></td>
 													</tr>
 													
