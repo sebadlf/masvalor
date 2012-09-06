@@ -36,7 +36,7 @@ class doctorProfileModel {
 		$headers .= "Content-type: text/html\r\n";
 		$headers .= "From: ".$adminemail."\r\n"; // remitente
 		$headers .= "Return-Path:".$adminemail."\r\n"; // return-path*/
-		$asunto ="Activación Usuario +VALOR.Doc";
+		$asunto ="Activaciï¿½n Usuario +VALOR.Doc";
 		mail($email,$asunto,$texto,$headers);
 	}
 	
@@ -54,9 +54,9 @@ class doctorProfileModel {
 		if($type == 'rejected')
 			$asunto ="Rechazo en +Valor.doc";
 		elseif($type == 'desactived')
-			$asunto = "Desactivación en +Valor.doc";
+			$asunto = "DesactivaciÃ³n en +Valor.doc";
 		elseif($type == 'pending')
-			$asunto = "Desactivación de cuenta +VALOR.Doc";
+			$asunto = "DesactivaciÃ³n de cuenta +VALOR.Doc";
 			
 		
 		$texto = file_get_contents(home_url().'/wp-content/plugins/masvalor/app/includes/mailing/desactivacion.php?date='.date("d-m-Y").'&email='.$email.'&name='.$name.'&lastname='.$lastname);
@@ -97,7 +97,7 @@ class doctorProfileModel {
 	
 	function give_me_all_zones() {
 		global $wpdb;
-		$sql_query = 'select id,name from '.$wpdb->prefix.'masvalor_zones order by name';
+		$sql_query = 'select id, name from '.$wpdb->prefix.'masvalor_zones order by name';
 		
 		return $wpdb->get_results($sql_query);
 	}
@@ -418,7 +418,7 @@ class doctorProfileModel {
 		
 		$imageFile  = $_FILES['identity_image_file'];
 
-		if ((int)$imageFile['size'] <= (int)$parameters['identity_image_size'] && !strstr(utf8_decode($imageFile['name']),'ñ') && !strstr(utf8_decode($imageFile['name']),'Ñ')){
+		if ((int)$imageFile['size'] <= (int)$parameters['identity_image_size'] && !strstr(utf8_decode($imageFile['name']),'ï¿½') && !strstr(utf8_decode($imageFile['name']),'ï¿½')){
 			if ($imageFile['name'] != '' && $imageFile['name'] != null){
 				
 				$identity_image = masvalor_doUpload($userid,$imageFile);
@@ -430,7 +430,7 @@ class doctorProfileModel {
 			echo __("Su imagen de identidad debe tener como m&aacute;ximo un tama&ntilde;o de ").$parameters['identity_image_size']." bytes y no puede contener caract&eacute;res extra&ntilde;os.";
 		
 		$cvFile  = $_FILES['cv_file'];
-		if ($cvFile['size'] <= $parameters['cv_size'] && !strstr(utf8_decode($imageFile['name']),'ñ') && !strstr(utf8_decode($imageFile['name']),'Ñ')){
+		if ($cvFile['size'] <= $parameters['cv_size'] && !strstr(utf8_decode($imageFile['name']),'ï¿½') && !strstr(utf8_decode($imageFile['name']),'ï¿½')){
 			if ($cvFile['name'] != '' && $cvFile['name'] != null)
 				$cv = masvalor_doUpload($userid,$cvFile);
 			else

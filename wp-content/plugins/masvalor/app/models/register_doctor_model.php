@@ -152,7 +152,7 @@ class registerDoctorModel {
     global $wpdb;
 		
     $sql ='SELECT  COUNT(*) FROM '.$wpdb->prefix.'masvalor_profiles
-	                  WHERE userid == '.$user_id;  
+	                  WHERE userid = '.$user_id;  
 	
 	$data = $wpdb->get_var($sql);
     

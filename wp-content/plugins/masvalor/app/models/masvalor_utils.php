@@ -839,7 +839,7 @@ class mv_comboUtils {
 	//Contruct Universities combo
 	public function getUniversities($selected,$id){
 			global $wpdb;
-			$sql = 'SELECT * FROM '.$wpdb->prefix.'masvalor_universities;';
+			$sql = 'SELECT * FROM '.$wpdb->prefix.'masvalor_universities Order By name;';
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			
 			ob_start();
@@ -889,7 +889,7 @@ class mv_comboUtils {
 	//Contruct Disciplines group combo
 	public function getDisciplinesGroups($selected,$id){
 			global $wpdb;
-			$sql = 'SELECT id,name FROM '.$wpdb->prefix.'masvalor_disciplines;';
+			$sql = 'SELECT id,name FROM '.$wpdb->prefix.'masvalor_disciplines Order By name;';
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			ob_start();
 			?>
@@ -911,7 +911,7 @@ class mv_comboUtils {
 	
 	public function getDisciplinesSubGroups($selected,$id,$id_group){
 			global $wpdb;
-			$sql = 'SELECT id,name FROM '.$wpdb->prefix.'masvalor_subdisciplines where id_discipline='.$id_group;
+			$sql = 'SELECT id, name FROM '.$wpdb->prefix.'masvalor_subdisciplines where id_discipline='.$id_group . " Order By name";
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			ob_start();
 			?>
@@ -1030,9 +1030,9 @@ class mv_comboUtils {
 	public function getMaritalStatus($selected,$id){
 	
 			ob_start();
-			$maritalStatus[] = 'Soltero';
 			$maritalStatus[] = 'Casado';
 			$maritalStatus[] = 'Divorciado';
+			$maritalStatus[] = 'Soltero';
 			$maritalStatus[] = 'Viudo';
 		
 			?>
@@ -1106,7 +1106,7 @@ class mv_comboUtils {
 	public function getCountries($selected,$id='country',$all = null){
 			
 			global $wpdb;
-			$sql = 'SELECT name FROM '.$wpdb->prefix.'masvalor_countries;';
+			$sql = 'SELECT name FROM '.$wpdb->prefix.'masvalor_countries Order By name;';
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			
 			ob_start();
@@ -1139,7 +1139,7 @@ class mv_comboUtils {
 	public function getStates($selected,$country,$id='state',$all = null){
 			
 			global $wpdb;
-			$sql = 'SELECT state FROM '.$wpdb->prefix.'masvalor_states WHERE country = "'.$country.'";';
+			$sql = 'SELECT state FROM '.$wpdb->prefix.'masvalor_states WHERE country = "'.$country.'" Order By state;';
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			ob_start();
 			
@@ -1175,7 +1175,7 @@ class mv_comboUtils {
 	public function getCities($selected,$country,$state,$id='city',$all = null){
 			
 			global $wpdb;
-			$sql = 'SELECT city FROM '.$wpdb->prefix.'masvalor_cities WHERE state ="'.$state.'" AND country ="'.$country.'" ;';
+			$sql = 'SELECT city FROM '.$wpdb->prefix.'masvalor_cities WHERE state ="'.$state.'" AND country ="'.$country.'" Order By city;';
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			ob_start();
 			
@@ -1210,7 +1210,7 @@ class mv_comboUtils {
 	public function getDoctors($selected,$id='doctors'){
 			
 			global $wpdb;
-			$sql = 'SELECT userid,CONCAT(lastname," - ",name)as name FROM '.$wpdb->prefix.'masvalor_profiles WHERE actived = 1';
+			$sql = 'SELECT userid, CONCAT(lastname," - ",name) as name FROM '.$wpdb->prefix.'masvalor_profiles WHERE actived = 1 ';
 			$datas = $wpdb->get_results($sql,OBJECT_K);
 			ob_start();
 			

@@ -268,16 +268,16 @@ var activeModal = null;
 
  function show_popup_education() {
 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_education.php";
-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="600" style="border:0">', {
+    activeModal = jQuery.modal('<iframe src="' + src + '" height="270" width="750" style="border:0">', {
 	opacity:80,
 	overlayCss: {backgroundColor:"#000"},
 	closeHTML:"",
 	containerCss:{
 		backgroundColor:"#fff",
 		borderColor:"#fff",
-		height:304,
+		height:274,
 		padding:0,
-		width:600,
+		width:750,
 	},
 	overlayClose:true,
 	onClose: function(dialog){
@@ -320,16 +320,16 @@ var activeModal = null;
 
 function show_popup_education_post() {
 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_education_pos.php";
-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="600" style="border:0">', {
+    activeModal = jQuery.modal('<iframe src="' + src + '" height="290" width="750" style="border:0">', {
 	opacity:80,
 	overlayCss: {backgroundColor:"#000"},
 	closeHTML:"",
 	containerCss:{
 		backgroundColor:"#fff",
 		borderColor:"#fff",
-		height:304,
+		height:294,
 		padding:0,
-		width:600,
+		width:750,
 	},
 	overlayClose:true,
 	onClose: function(dialog){
@@ -351,7 +351,7 @@ function show_popup_education_post() {
 
 function show_popup_tesis_postgrado() {
 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_tesis_postgrado.php";
-    activeModal = jQuery.modal('<iframe src="' + src + '" height="350" width="520" style="border:0">', {
+    activeModal = jQuery.modal('<iframe src="' + src + '" height="330" width="650" style="border:0">', {
 	opacity:80,
 	overlayCss: {backgroundColor:"#000"},
 	closeHTML:"",
@@ -359,9 +359,9 @@ function show_popup_tesis_postgrado() {
 	
 		backgroundColor:"#fff",
 		borderColor:"#fff",
-		height:350,
+		height:334,
 		padding:0,
-		width:520,
+		width:650,
 	},
 	overlayClose:true,
 	onClose: function(dialog){
@@ -385,16 +385,16 @@ function show_popup_tesis_postgrado() {
 
 function show_popup_experiencia_laboral() {
 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_experiencia_laboral.php";
-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="500" style="border:0">', {
+    activeModal = jQuery.modal('<iframe src="' + src + '" height="260" width="650" style="border:0">', {
 	opacity:80,
 	overlayCss: {backgroundColor:"#000"},
 	closeHTML:"",
 	containerCss:{
 		backgroundColor:"#fff",
 		borderColor:"#fff",
-		height:304,
+		height:264,
 		padding:0,
-		width:500,
+		width:650,
 	},
 	overlayClose:true,
 	onClose: function(dialog){
@@ -430,16 +430,16 @@ function validate_dates(begin_date,finish_date) {
 
 function show_popup_diciplines() {
 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_disciplines.php";
-    activeModal = jQuery.modal('<iframe src="' + src + '" height="200" width="630" style="border:0">', {
+    activeModal = jQuery.modal('<iframe src="' + src + '" height="180" width="540" style="border:0">', {
 	opacity:80,
 	overlayCss: {backgroundColor:"#000"},
 	closeHTML:"",
 	containerCss:{
 		backgroundColor:"#fff",
 		borderColor:"#fff",
-		height:200,
+		height:184,
 		padding:0,
-		width:630
+		width:540
 	},
 	overlayClose:true,
 	onClose: function(dialog){
@@ -685,16 +685,16 @@ function addLanguage(language,level_speak,level_write,level_read){
 
 function show_popup_language(){
 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_language.php";
-    activeModal =jQuery.modal('<iframe src="' + src + '" height="260" width="490" style="border:0"></iframe>', {
+    activeModal =jQuery.modal('<iframe src="' + src + '" height="240" width="380" style="border:0"></iframe>', {
 	opacity:80,
 	overlayCss: {backgroundColor:"#000"},
 	closeHTML:"",
 	containerCss:{
 		backgroundColor:"#fff",
 		borderColor:"#fff",
-		height:263,
+		height:244,
 		padding:0,
-		width:492,
+		width:384,
 	},
 	overlayClose:true,
 	onClose: function(dialog){
