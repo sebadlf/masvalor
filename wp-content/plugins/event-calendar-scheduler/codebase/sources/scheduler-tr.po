@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: event-calendar-scheduler\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-23 16:19+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Can KAYA <can.kaya@kartaca.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler\n"
+"X-Poedit-SearchPath-0: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler\n"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/admin.php:39
+msgid "Save Changes"
+msgstr "Degisiklikleri Kaydet"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/admin.php:40
+msgid "Restore default"
+msgstr "Varsay?lan? geri yukle"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/scheduler.php:121
+msgid "Scheduler"
+msgstr "Zaman Planlay?c?"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/scheduler.php:224
+msgid "Installation error: Event Calendar / Scheduler plugin requires PHP 5.x"
+msgstr "Kurulum hatas?: Event Calendar / Scheduler eklentisi PHP 5.x surumune ihtiyac duymaktad?r"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/scheduler.php:277
+msgid "Oncoming events"
+msgstr "Yaklasan Etkinlikler"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/mce_scheduler/dialog.php:16
+msgid "Add event in the Scheduler calendar"
+msgstr "Zaman Planlay?c?s? takvimine etkinlik ekle"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/mce_scheduler/dialog.php:266
+msgid "Incorrect time period!"
+msgstr "Yanl?s zaman aral?g?!"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/mce_scheduler/dialog.php:304
+msgid "Event name"
+msgstr "Etkinlik ad?"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/mce_scheduler/dialog.php:311
+msgid "Link text"
+msgstr "Link yaz?s?"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/mce_scheduler/dialog.php:317
+msgid "Event start date"
+msgstr "Etkinlik baslama zaman?"
+
+#: /home/cankaya/ortak/Gecici/cankaya/pukkalar/pukka/plugins/event-calendar-scheduler/mce_scheduler/dialog.php:367
+msgid "Event end date"
+msgstr "Etkinlik bitis zaman?"
+

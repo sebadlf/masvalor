@@ -1,0 +1,304 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:96
+msgid "12-hour time mode"
+msgstr "12-heures mode de temps"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:103
+msgid "12/24-hour time mode"
+msgstr "12/24-heures mode de temps"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:129
+msgid "Add"
+msgstr "Ajouter"
+
+#. Text in echo
+#: event-calendar-scheduler/mce_scheduler/dialog.php:33
+msgid "Add event in the Scheduler calendar"
+msgstr "Ajouter un événement dans le calendrier"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:227
+#: event-calendar-scheduler/admin.php:279
+msgid "Agenda"
+msgstr "Agenda"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:280
+msgid "All modes were removed. You need to have at least one mode available."
+msgstr "Tous les modes ont été supprimé. Vous devez avoir au moins un mode disponible."
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:119
+msgid "Allow users' groups to edit events"
+msgstr "Permettre aux groupes d'utilisateurs d'éditer les évènements"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:213
+msgid "Available modes"
+msgstr "Modes disponibles"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:292
+msgid "Creating an event by single clicking the mouse."
+msgstr "Créer un événement par simple clic de souris."
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:216
+#: event-calendar-scheduler/admin.php:252
+msgid "Day"
+msgstr "Jour"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:319
+msgid "Debug"
+msgstr "Debug"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:235
+msgid "Default mode"
+msgstr "Mode par défaut"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:89
+#: event-calendar-scheduler/admin.php:99
+#: event-calendar-scheduler/admin.php:305
+#: event-calendar-scheduler/admin.php:322
+msgid "Disable"
+msgstr "Désactiver"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:53
+msgid "Each blog post will be presented as an event in the scheduler."
+msgstr "Chaque article du blog sera présenté comme un événement dans le calendrier."
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:130
+msgid "Edit"
+msgstr "Modifier"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:91
+#: event-calendar-scheduler/admin.php:101
+#: event-calendar-scheduler/admin.php:307
+#: event-calendar-scheduler/admin.php:324
+msgid "Enable"
+msgstr "Activer"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:326
+msgid "Enable/Disable debug mode"
+msgstr "Activer/Désactiver le debug mode"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:93
+msgid "Enable/Disable repeated events"
+msgstr "Activer/Désactiver les évènements répétés"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:309
+msgid "Enable/Disable to show multiline event in week and day view"
+msgstr "Activer/Désactiver montrer les événements sur plusieurs lignes dans la vue semaine et jour"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:288
+msgid "Event creation onClick"
+msgstr "Création d'événement onClick"
+
+#. Text in echo
+#: event-calendar-scheduler/mce_scheduler/dialog.php:384
+msgid "Event end date"
+msgstr "Fin de l'événement"
+
+#. Text in echo
+#: event-calendar-scheduler/mce_scheduler/dialog.php:321
+msgid "Event name"
+msgstr "Nom de l'événement"
+
+#. Text in echo
+#: event-calendar-scheduler/mce_scheduler/dialog.php:334
+msgid "Event start date"
+msgstr "Début de l'événement"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:295
+msgid "Events number in Sidebar"
+msgstr "Nombre d'événements dans la Sidebar"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:133
+msgid "Guests"
+msgstr "Invités"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:76
+msgid "Height of the scheduler"
+msgstr "Heuteur du calendrier"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:80
+msgid "Height of the scheduler must be defined in pixels  ( not lesser than 200px)."
+msgstr "La hauteur du calendrier doit être définie en pixels  (pas en dessous de 200px)."
+
+#. Text in function
+#: event-calendar-scheduler/scheduler.php:1
+msgid "Incorrect configuration of dhtmlxscheduler - You need to select at least one mode."
+msgstr "Configuration incorrecte de dhtmlxscheduler - Vous devez sélectionner au moins un mode."
+
+#. Text in function
+#: event-calendar-scheduler/scheduler.php:1
+msgid "Installation error: Event Calendar / Scheduler plugin requires PHP 5.x"
+msgstr "Erreur d'installation : Event Calendar / Scheduler plugin nécessite PHP 5.x"
+
+#. Text in echo
+#: event-calendar-scheduler/mce_scheduler/dialog.php:328
+msgid "Link text"
+msgstr "Nom du lien"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:312
+msgid "Link to the Scheduler"
+msgstr "Lien vers le calendrier"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:316
+msgid "Link to the page with Scheduler"
+msgstr "Lien vers la page du calendrier"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:285
+msgid "Mode, which will be activated by default, after scheduler launching."
+msgstr "Mode, qui sera activé par défaut, après le démarrage du calendrier."
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:232
+msgid "Modes, which will be available to the users."
+msgstr "Modes, qui seront disponibles pour les utilisateurs."
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:109
+msgid "Monday"
+msgstr "Lundi"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:220
+#: event-calendar-scheduler/admin.php:264
+msgid "Month"
+msgstr "Mois"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:63
+msgid "Name of the events table. By default, 'events_rec'"
+msgstr "Nom du tableau des évènements. Par défaut 'events_rec'"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:51
+#: event-calendar-scheduler/admin.php:290
+msgid "No"
+msgstr "Non"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:299
+msgid "Number of events which will showed in Sidebar"
+msgstr "Nombre d'événements qui seront montrés dans la Sidebar"
+
+#. Text in function
+#: event-calendar-scheduler/scheduler.php:1
+msgid "Oncoming events"
+msgstr "Evénements à venir"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:86
+msgid "Repeat events"
+msgstr "Répéter l'évènement"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:16
+msgid "Scheduler settings"
+msgstr "Paramètres du calendrier"
+
+#. Text in function
+#: event-calendar-scheduler/scheduler.php:1
+msgid "Settings of Scheduler"
+msgstr "Les paramètres du calendrier"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:23
+msgid "Show blog posts as events in the scheduler"
+msgstr "Montrer les articles du blog comme événements dans le calendrier."
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:302
+msgid "Show multiline event in week and day view"
+msgstr "Montrer les événements sur plusieurs lignes dans la vue semaine et jour"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:111
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:59
+msgid "Table name"
+msgstr "Nom du tableau"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:106
+msgid "The first day of the week"
+msgstr "Le premier jour de la semaine"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:113
+msgid "The week begins with"
+msgstr "La semaine commence par"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:128
+msgid "View"
+msgstr "Vue"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:218
+#: event-calendar-scheduler/admin.php:258
+msgid "Week"
+msgstr "Semaine"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:69
+msgid "Width of the scheduler"
+msgstr "Largeur du calendrier"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:73
+msgid "Width of the scheduler must be defined in pixels ( not lesser than 200px ) or percents ( not lesser than 20%)."
+msgstr "La hauteur du calendrier doit être définie en pixels  (pas en dessous de 200px) ou en pourcentage (pas en dessous de 20%)."
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:222
+#: event-calendar-scheduler/admin.php:272
+msgid "Year"
+msgstr "Année"
+
+#. Text in echo
+#: event-calendar-scheduler/admin.php:51
+#: event-calendar-scheduler/admin.php:290
+msgid "Yes"
+msgstr "Oui"
+
+#. Text in echo
+#: event-calendar-scheduler/scheduler.php:178
+msgid "There are no upcoming events for now"
+msgstr "Il n'y a pas d'événement à venir pour le moment"
+

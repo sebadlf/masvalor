@@ -1,0 +1,59 @@
+.Columna{
+    float:left;    
+    width:96%;
+    padding:0 0 15px 15px;
+    border: 1px solid #999;    
+    margin:10px auto;
+}
+
+
+
+.ContenedorCol{
+  float:left;
+  margin-right:50px;
+  width:90%;
+}
+
+.flecha{
+    float:right;
+    margin:9px 5px 0 0; 
+}
+
+.Separator{
+    border-top:1px solid #999;
+    margin-bottom:12px;
+}
+
+.ClaseColumna{
+  width:45%;
+  float:left;
+  margin-right:20px;
+  
+}  
+
+.campo{
+  margin:5px;
+  font-size: 12px;
+  float:left;
+}
+
+.tituloCampo{
+  width:85px;
+  float:left;
+  display:block;
+}
+
+.inputCampo{
+  width:60px;
+  float:left;
+}
+
+.colTable{
+  width:50%;
+  padding-right:40px !important;
+}
+
+.documentsToSave{
+  margin:5px;
+  border-bottom:1px solid #999;
+}
