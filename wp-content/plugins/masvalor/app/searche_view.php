@@ -889,7 +889,7 @@ function isChecked($estado){
 																				<td><?php echo $candidate->gender?></td>
 																				<td><?php echo $candidate->date?></td>
 																				<td><a href="<?php echo masvalor_getUrl().'/doctor-profile/&cid='.$candidate->userid ?>">Ver</a></td>
-																				<td><a href="<?php echo home_url().'/wp-content/uploads/profiles/'.$candidate->userid.'/'.$candidate->cv ?>">Ver</a></td>
+																				<td><a href="<?php echo home_url().'/wp-content/uploads/profiles/'.$candidate->user_login.'/'.$candidate->cv ?>">Ver</a></td>
 																				<td><a title="<?php echo __('Seleccionar Profesional') ?>" href="#" onclick="selectAsHired('<?php echo $candidate->userid ?>')"><img src="wp-content/plugins/masvalor/app/includes/image/accept.png" height="13" width="13" /></a></td>
 																				<td  style="cursor:pointer" onclick="deleteRow(this.parentElement,'<?php echo $candidate->userid?>',0)">X</td>
 																			</tr>
@@ -932,7 +932,7 @@ function isChecked($estado){
 																				<td><?php echo $applicant->gender?></td>
 																				<td><?php echo $applicant->date?></td>
 																				<td><a href="<?php echo masvalor_getUrl().'/doctor-profile/&cid='.$applicant->userid ?>">Ver</a></td>
-																				<td><a href="<?php echo home_url().'/wp-content/uploads/profiles/'.$applicant->userid.'/'.$applicant->cv ?>">Ver</a></td>
+																				<td><a href="<?php echo home_url().'/wp-content/uploads/profiles/'.$applicant->user_login.'/'.$applicant->cv ?>">Ver</a></td>
 																				<td><a title="<?php echo __('Seleccionar Profesional') ?>" href="#" onclick="selectAsHired('<?php echo $applicant->userid ?>')"><img src="wp-content/plugins/masvalor/app/includes/image/accept.png" height="13" width="13" /></a></td>
 																				<td  style="cursor:pointer" onclick="deleteRow(this.parentElement,'<?php echo $applicant->userid?>',2)">X</td>
 																			</tr>

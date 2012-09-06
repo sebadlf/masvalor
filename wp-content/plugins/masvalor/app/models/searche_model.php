@@ -54,7 +54,9 @@ class searcheModel {
     public function getPostulants($type,$searchid){	
 
 		global $wpdb;
-		$sql = 'SELECT (floor((unix_timestamp()-unix_timestamp(p.birth_date)) / (60*60*24*365))) as age,p.name,p.lastname,p.gender,p.userid,p.cv,sr.date FROM '.$wpdb->prefix.'masvalor_profiles p,'.$wpdb->prefix.'masvalor_searchresults sr WHERE p.userid = sr.userid AND searchid='.$searchid.' AND type='.$type.';';
+		$sql = 'SELECT (floor((unix_timestamp()-unix_timestamp(p.birth_date)) / (60*60*24*365))) as age,p.name,p.lastname,p.gender,p.userid,u.*, p.cv,sr.date 
+			FROM '.$wpdb->prefix.'masvalor_profiles p,'.$wpdb->prefix.'masvalor_searchresults sr, '.$wpdb->prefix.'users u 
+			WHERE p.userid = sr.userid AND searchid='.$searchid.' AND p.userid = u.ID AND type='.$type.';';
 		$data = $wpdb->get_results($sql,OBJECT_K);
 		return $data;
 
