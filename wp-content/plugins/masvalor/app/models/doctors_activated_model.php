@@ -65,8 +65,9 @@ class doctors_activatedModel {    //$date_from,$date_to
 						AND CHAR_LENGTH(title) > 0 
 						AND CHAR_LENGTH(title_tesis) > 0 
 						AND CHAR_LENGTH(identity_number) > 0 
-						AND CHAR_LENGTH(title_grad) > 0'; 	 
-		
+						AND CHAR_LENGTH(title_grad) > 0
+ 						Order By lastname, name'; 	
+ 	 		
 		//Filtramos, en caso de ser necesario
 		if($search) 
 			$sql .= " AND LOWER( {$filter_sel} ) LIKE '%".$search."%'";
