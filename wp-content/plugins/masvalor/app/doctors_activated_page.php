@@ -61,7 +61,7 @@ class doctors_activated_page extends tina_mvc_base_page_class {
 		$tina_mvcv_pages = get_option("tina_mvc_pages");
 		$tpl_vars->pageid = $tina_mvcv_pages['masvalor']['page_id'];
 			
-		$tpl_vars->datas = $model->getData($filter_sel,$search,$limitStart,$limitEnd);
+		$tpl_vars->datas = $model->getData($filter_sel,$search,$limitStart,$itemsPerPage);
         $tpl_vars->count = $model->getTotal($filter_sel,$search);
 		$tpl_vars->itemsPerPage = $itemsPerPage;
 		$tpl_vars->currPage = $currpage;

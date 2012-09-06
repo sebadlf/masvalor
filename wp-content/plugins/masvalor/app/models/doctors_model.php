@@ -18,7 +18,7 @@
  */
 class doctorsModel {    //$date_from,$date_to
     
-   public function getData($filter_sel,$search,$limitStart,$limitEnd){
+   public function getData($filter_sel,$search,$limitStart,$itemsPerPage){
 		global $wpdb;
 		
 		
@@ -83,8 +83,8 @@ class doctorsModel {    //$date_from,$date_to
 		if($_POST["order"] != '' && $_POST["order"] != null)
 			$sql .= ' order by '.$_POST["order"].' '.$_POST["order_dir"];
 		
-		if ($limitStart !== null && $limitStart !== '' && $limitEnd !== null && $limitEnd !== '' )
-			$sql .=" LIMIT {$limitStart},{$limitEnd}";	
+		if ($limitStart !== null && $limitStart !== '' && $itemsPerPage !== null && $itemsPerPage !== '' )
+			$sql .=" LIMIT {$limitStart},{$itemsPerPage}";	
 
 		$data = $wpdb->get_results($sql);
 		
@@ -105,7 +105,7 @@ class doctorsModel {    //$date_from,$date_to
 		return $data;
    }
 
-	public function getUnactived($filter_sel,$search,$limitStart,$limitEnd){
+	public function getUnactived($filter_sel,$search,$limitStart,$itemsPerPage){
 		global $wpdb;
 	
 		
@@ -121,8 +121,8 @@ class doctorsModel {    //$date_from,$date_to
 		if($search) 
 			$sql .= " AND LOWER( {$filter_sel} ) LIKE '%".$search."%'";
 		
-		if ($limitStart !== null && $limitStart !== '' && $limitEnd !== null && $limitEnd !== '' )
-			$sql .=" LIMIT {$limitStart},{$limitEnd}";	
+		if ($limitStart !== null && $limitStart !== '' && $itemsPerPage !== null && $itemsPerPage !== '' )
+			$sql .=" LIMIT {$limitStart},{$itemsPerPage}";	
 		
 		$unactived = $wpdb->get_results($sql);
 		

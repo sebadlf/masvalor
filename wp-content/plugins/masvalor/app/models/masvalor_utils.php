@@ -242,6 +242,7 @@ function masvalor_getUrl(){
 		$tina_mvcv_pages = get_option("tina_mvc_pages");
 		$pageid = $tina_mvcv_pages['masvalor']['page_id'];	
 		return home_url().'/?page_id='.$pageid;
+		
 }
 
 

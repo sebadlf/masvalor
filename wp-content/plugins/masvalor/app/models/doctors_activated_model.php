@@ -18,21 +18,10 @@
  */
 class doctors_activatedModel {    //$date_from,$date_to
     
-   public function getData($filter_sel,$search,$limitStart,$limitEnd){
+   public function getData($filter_sel,$search,$limitStart,$itemsPerPage){
 		global $wpdb;
-	
-		
-/* 		$sql = 'SELECT  pr.*,
-		        (SELECT prt.title FROM '.$wpdb->prefix.'masvalor_profiletitles prt 
-						                  WHERE prt.userid = pr.userid AND type = 0 AND prt.ppal = 1 ) as title,
-				(SELECT sub.name FROM '.$wpdb->prefix.'masvalor_subdisciplines sub,'.$wpdb->prefix.'masvalor_rel_user_subdisciplines rdis
-						         WHERE rdis.userid = pr.userid        AND
-								       rdis.subdisciplineid = sub.id AND 
-									   rdis.ppal =1
-						)as name_subdis						  
-        		FROM '.$wpdb->prefix.'masvalor_profiles pr WHERE  pr.actived = 0';  */
 							  
- 		$sql = 'SELECT  u.user_login as username,mu.*,
+ 		$sql = 'SELECT  u.user_login as username, mu.*,
 		                (SELECT dis.name
 						        FROM '.$wpdb->prefix.'masvalor_disciplines dis,'.$wpdb->prefix.'masvalor_rel_user_subdisciplines rld,'.$wpdb->prefix.'masvalor_subdisciplines subs
 								WHERE  rld.subdisciplineid = subs.id AND 
@@ -69,15 +58,21 @@ class doctors_activatedModel {    //$date_from,$date_to
 							WHEN 4 THEN "Rechazado"
 						END as actived
 						FROM '.$wpdb->prefix.'masvalor_profiles mu,'.$wpdb->prefix.'users u
-						        WHERE u.id = mu.userid AND
-									  mu.actived = 0'; 	 
+						WHERE u.id = mu.userid AND mu.actived = 0
+						HAVING CHAR_LENGTH(name) > 0 
+						AND CHAR_LENGTH(lastname) > 0 
+						AND CHAR_LENGTH(name_dis) > 0 
+						AND CHAR_LENGTH(title) > 0 
+						AND CHAR_LENGTH(title_tesis) > 0 
+						AND CHAR_LENGTH(identity_number) > 0 
+						AND CHAR_LENGTH(title_grad) > 0'; 	 
 		
 		//Filtramos, en caso de ser necesario
 		if($search) 
 			$sql .= " AND LOWER( {$filter_sel} ) LIKE '%".$search."%'";
 		
-		if ($limitStart !== null && $limitStart !== '' && $limitEnd !== null && $limitEnd !== '' )
-			$sql .=" LIMIT {$limitStart},{$limitEnd}";	
+		if ($limitStart !== null && $limitStart !== '' && $itemsPerPage !== null && $itemsPerPage !== '' )
+			$sql .=" LIMIT {$limitStart},{$itemsPerPage}";	
 		
 		$data = $wpdb->get_results($sql);
 		
@@ -86,12 +81,22 @@ class doctors_activatedModel {    //$date_from,$date_to
    }
    
     public function getTotal($filter_sel,$search){
+    	
+    	/*
 		global $wpdb;
 		$sql = 'SELECT  COUNT(*) as count FROM '.$wpdb->prefix.'masvalor_profiles,'.$wpdb->prefix.'users u WHERE u.ID = userid';  
 
 		//Filtramos, en caso de ser necesario
 		if($search) 
 			$sql .= " AND LOWER( {$filter_sel} ) LIKE '%".$search."%'";
+		
+		$sql .= " HAVING CHAR_LENGTH(name) > 0 
+						AND CHAR_LENGTH(lastname) > 0 
+						AND CHAR_LENGTH(name_dis) > 0 
+						AND CHAR_LENGTH(title) > 0 
+						AND CHAR_LENGTH(title_tesis) > 0 
+						AND CHAR_LENGTH(identity_number) > 0 
+						AND CHAR_LENGTH(title_grad) > 0";
 		
 		$data = $wpdb->get_results($sql);
 		
@@ -100,7 +105,10 @@ class doctors_activatedModel {    //$date_from,$date_to
 		endforeach;
 		return 0;	
 		
-
+		*/    	
+    	
+    	return count($this->getData($filter_sel,$search,0,1000000));
+    	
    }
    
    	function sendNotificationActived($email){

@@ -104,7 +104,6 @@ a{
 									 <option value="prt.title"><?php echo __('T&iacute;tulo') ?></option>
 									 <option value="actived"><?php echo __('Estado') ?></option>
 								</select>	
-								<BR>
 							
 							   <button onclick="this.form.action = '<?php echo masvalor_getUrl().'/doctors/' ?>'; this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
 							  <button style="padding-top: 2px;" onclick="document.getElementById('search').value='';this.form.getElementById('filter_state').value='-1';this.form.submit();">Reset</button>
@@ -199,7 +198,7 @@ a{
 										for ($i=1;$i<=$pages;$i++){
 											$pageLink = masvalor_getUrl().'/doctors/&limitstart='.(($i-1)*$V->itemsPerPage);
 											
-											ECHO "<BR>".$pageLink. "<BR>";
+											//ECHO "<BR>".$pageLink. "<BR>";
 											
 											if ($V->currPage != $i)
 												$href = '<a href='.$pageLink.'>'.$i.'</a>';
@@ -211,10 +210,14 @@ a{
 												echo ' - '.$href;
 										}
 									?>
+									
+									<div style="margin-top: 10px">
+										Registros: <?php echo (int)$V->count; ?>	
+									</div>
 							</div>
 							  
 							  
-							Registros: <?php echo count($V->datas); ?>
+							
 
 							
 						</td>

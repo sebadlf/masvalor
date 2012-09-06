@@ -68,7 +68,7 @@ a{
 								     <!--option value="identity_number"><?php echo __('DNI') ?></option>
 									 <option value="main_contact_mail"><?php echo __('E-mail') ?></option-->
 								</select>	
-							   <button onclick="this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
+							   <button onclick="this.form.action = '<?php echo masvalor_getUrl().'/doctors_activated/' ?>'; this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
 							  <button style="padding-top: 2px;" onclick="document.getElementById('search').value='';this.form.getElementById('filter_state').value='-1';this.form.submit();">Reset</button>
 						    </div>	
 							
@@ -93,17 +93,19 @@ a{
 																
 									<tbody>
 									
+									
 										<?php foreach ( $V->datas as $result ) {?>
-											<?php if(($result->name != '' && $result->name != null) && ($result->lastname != null && $result->lastname != '') && 
+											<?php if(true || ($result->name != '' && $result->name != null) && ($result->lastname != null && $result->lastname != '') && 
 											          ($result->name_dis != '' && $result->name_dis != null) && ($result->title != null && $result->title != '') &&
 													  ($result->title_tesis != '' && $result->title_tesis != null)&& ($result->identity_number != '' && $result->identity_number != null) &&
 													  ($result->title_grad != '' && $result->title_grad != null) ) { ?>					
 												<tr style="background-color:#eeeeee;">
 													<td>
-														 
-														 <a href="/?page_id=425/doctor-profile/&cid=<?php $result->userid; ?>" target="_blank" ><?php echo $result->name;?></a>
+														 <a href="/?page_id=425/doctor-profile/&cid=<?php echo $result->userid; ?>" target="_blank" ><?php echo $result->name;?></a>
 													</td>
-													<td><?php echo $result->lastname;?></td>
+													<td>
+														 <a href="/?page_id=425/doctor-profile/&cid=<?php echo $result->userid; ?>" target="_blank" ><?php echo $result->lastname;?></a>
+													</td>
 													<td><?php echo $result->name_dis;?></td>
 													<td><?php echo $result->title;?></td>
 													<td align="center"> 
@@ -117,28 +119,35 @@ a{
 								  </tbody>
 							
 							  </table>
+							  
+							<div class="paginator" style="margin-left:16px">
+									<?php 
+									$pages = ceil($V->count/$V->itemsPerPage);
+									if ($pages > 1)
+										for ($i=1;$i<=$pages;$i++){
+											$pageLink = masvalor_getUrl().'/doctors_activated/&limitstart='.(($i-1)*$V->itemsPerPage);
+											if ($V->currPage != $i)
+												$href = '<a href='.$pageLink.'>'.$i.'</a>';
+											else
+												$href = $i;
+											if ($i==1)
+												echo $href;
+											else
+												echo ' - '.$href;
+										}
+									?>
+									
+									<div style="margin-top: 10px">
+										Registros: <?php echo $V->count; ?>	
+									</div>
+							</div>
+							  
 						</td>
 					</tr>		
 				   </table> 
 				   				   
-					<div class="paginator" style="margin-left:35px">
-							<?php 
-							$pages = ceil($V->count/$V->itemsPerPage);
-							if ($pages > 1)
-								for ($i=1;$i<=$pages;$i++){
-									$pageLink = masvalor_getUrl().'/doctors_activated/&limitstart='.(($i-1)*$V->itemsPerPage);
-									if ($V->currPage != $i)
-										$href = '<a href='.$pageLink.'>'.$i.'</a>';
-									else
-										$href = $i;
-									if ($i==1)
-										echo $href;
-									else
-										echo ' - '.$href;
-								}
-							?>
-					</div>
-				   
+
+					
 					<input type="hidden" name="cid" value="" />	
 					<input type="hidden" name="userid" id="userid" value=""/>
 					<input type="hidden" name="task" value="" />
