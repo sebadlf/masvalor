@@ -1,0 +1,746 @@
+diff --git a/.buildpath b/.buildpath
+new file mode 100644
+index 0000000..8bcb4b5
+--- /dev/null
++++ b/.buildpath
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<buildpath>
++	<buildpathentry kind="src" path=""/>
++	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
++</buildpath>
+diff --git a/.project b/.project
+new file mode 100644
+index 0000000..4958551
+--- /dev/null
++++ b/.project
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>MasValor</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.wst.jsdt.core.javascriptValidator</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.wst.validation.validationbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.dltk.core.scriptbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.php.core.PHPNature</nature>
++		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
++	</natures>
++</projectDescription>
+diff --git a/.settings/.jsdtscope b/.settings/.jsdtscope
+new file mode 100644
+index 0000000..2f6f983
+--- /dev/null
++++ b/.settings/.jsdtscope
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" path="">
++		<attributes>
++			<attribute name="provider" value="org.eclipse.wst.jsdt.web.core.internal.project.ModuleSourcePathProvider"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
++	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.WebProject">
++		<attributes>
++			<attribute name="hide" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
++	<classpathentry kind="output" path=""/>
++</classpath>
+diff --git a/.settings/org.eclipse.php.core.prefs b/.settings/org.eclipse.php.core.prefs
+new file mode 100644
+index 0000000..36abe1e
+--- /dev/null
++++ b/.settings/org.eclipse.php.core.prefs
+@@ -0,0 +1,4 @@
++eclipse.preferences.version=1
++include_path=0;/MasValor
++phpVersion=php5.3
++use_asp_tags_as_php=false
+diff --git a/.settings/org.eclipse.wst.jsdt.ui.superType.container b/.settings/org.eclipse.wst.jsdt.ui.superType.container
+new file mode 100644
+index 0000000..3bd5d0a
+--- /dev/null
++++ b/.settings/org.eclipse.wst.jsdt.ui.superType.container
+@@ -0,0 +1 @@
++org.eclipse.wst.jsdt.launching.baseBrowserLibrary
+\ No newline at end of file
+diff --git a/.settings/org.eclipse.wst.jsdt.ui.superType.name b/.settings/org.eclipse.wst.jsdt.ui.superType.name
+new file mode 100644
+index 0000000..05bd71b
+--- /dev/null
++++ b/.settings/org.eclipse.wst.jsdt.ui.superType.name
+@@ -0,0 +1 @@
++Window
+\ No newline at end of file
+diff --git a/wp-content/plugins/masvalor/app/doctor_profile_public_view.php b/wp-content/plugins/masvalor/app/doctor_profile_public_view.php
+index 38cc4ce..7f431cc 100755
+--- a/wp-content/plugins/masvalor/app/doctor_profile_public_view.php
++++ b/wp-content/plugins/masvalor/app/doctor_profile_public_view.php
+@@ -239,7 +239,7 @@ function show_popup_education_post() {
+ 
+ function show_popup_tesis_postgrado() {
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_tesis_postgrado.php";
+-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="500" style="border:0">', {
++    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="700" style="border:0">', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+@@ -248,7 +248,7 @@ function show_popup_tesis_postgrado() {
+ 		borderColor:"#fff",
+ 		height:304,
+ 		padding:0,
+-		width:500,
++		width:700,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+@@ -272,16 +272,16 @@ function show_popup_tesis_postgrado() {
+ 
+ function show_popup_experiencia_laboral() {
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_experiencia_laboral.php";
+-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="500" style="border:0">', {
++    activeModal = jQuery.modal('<iframe src="' + src + '" height="260" width="650" style="border:0">', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+ 	containerCss:{
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:304,
++		height:264,
+ 		padding:0,
+-		width:500,
++		width:650,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+@@ -504,9 +504,9 @@ function show_popup_language(){
+ 	containerCss:{
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:263,
++		height:264,
+ 		padding:0,
+-		width:492,
++		width:490,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+diff --git a/wp-content/plugins/masvalor/app/doctor_profile_view.php b/wp-content/plugins/masvalor/app/doctor_profile_view.php
+index 33b7451..616491d 100755
+--- a/wp-content/plugins/masvalor/app/doctor_profile_view.php
++++ b/wp-content/plugins/masvalor/app/doctor_profile_view.php
+@@ -268,16 +268,16 @@ var activeModal = null;
+ 
+  function show_popup_education() {
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_education.php";
+-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="600" style="border:0">', {
++    activeModal = jQuery.modal('<iframe src="' + src + '" height="270" width="750" style="border:0">', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+ 	containerCss:{
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:304,
++		height:274,
+ 		padding:0,
+-		width:600,
++		width:750,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+@@ -320,16 +320,16 @@ var activeModal = null;
+ 
+ function show_popup_education_post() {
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_education_pos.php";
+-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="600" style="border:0">', {
++    activeModal = jQuery.modal('<iframe src="' + src + '" height="290" width="750" style="border:0">', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+ 	containerCss:{
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:304,
++		height:294,
+ 		padding:0,
+-		width:600,
++		width:750,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+@@ -351,7 +351,7 @@ function show_popup_education_post() {
+ 
+ function show_popup_tesis_postgrado() {
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_tesis_postgrado.php";
+-    activeModal = jQuery.modal('<iframe src="' + src + '" height="350" width="520" style="border:0">', {
++    activeModal = jQuery.modal('<iframe src="' + src + '" height="330" width="650" style="border:0">', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+@@ -359,9 +359,9 @@ function show_popup_tesis_postgrado() {
+ 	
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:350,
++		height:334,
+ 		padding:0,
+-		width:520,
++		width:650,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+@@ -385,16 +385,16 @@ function show_popup_tesis_postgrado() {
+ 
+ function show_popup_experiencia_laboral() {
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_experiencia_laboral.php";
+-    activeModal = jQuery.modal('<iframe src="' + src + '" height="300" width="500" style="border:0">', {
++    activeModal = jQuery.modal('<iframe src="' + src + '" height="260" width="650" style="border:0">', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+ 	containerCss:{
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:304,
++		height:264,
+ 		padding:0,
+-		width:500,
++		width:650,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+@@ -430,16 +430,16 @@ function validate_dates(begin_date,finish_date) {
+ 
+ function show_popup_diciplines() {
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_disciplines.php";
+-    activeModal = jQuery.modal('<iframe src="' + src + '" height="200" width="630" style="border:0">', {
++    activeModal = jQuery.modal('<iframe src="' + src + '" height="180" width="540" style="border:0">', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+ 	containerCss:{
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:200,
++		height:184,
+ 		padding:0,
+-		width:630
++		width:540
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+@@ -685,16 +685,16 @@ function addLanguage(language,level_speak,level_write,level_read){
+ 
+ function show_popup_language(){
+ 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_language.php";
+-    activeModal =jQuery.modal('<iframe src="' + src + '" height="260" width="490" style="border:0"></iframe>', {
++    activeModal =jQuery.modal('<iframe src="' + src + '" height="240" width="380" style="border:0"></iframe>', {
+ 	opacity:80,
+ 	overlayCss: {backgroundColor:"#000"},
+ 	closeHTML:"",
+ 	containerCss:{
+ 		backgroundColor:"#fff",
+ 		borderColor:"#fff",
+-		height:263,
++		height:244,
+ 		padding:0,
+-		width:492,
++		width:384,
+ 	},
+ 	overlayClose:true,
+ 	onClose: function(dialog){
+diff --git a/wp-content/plugins/masvalor/app/doctors_activated_page.php b/wp-content/plugins/masvalor/app/doctors_activated_page.php
+index bbdaaec..d834be4 100755
+--- a/wp-content/plugins/masvalor/app/doctors_activated_page.php
++++ b/wp-content/plugins/masvalor/app/doctors_activated_page.php
+@@ -61,7 +61,7 @@ class doctors_activated_page extends tina_mvc_base_page_class {
+ 		$tina_mvcv_pages = get_option("tina_mvc_pages");
+ 		$tpl_vars->pageid = $tina_mvcv_pages['masvalor']['page_id'];
+ 			
+-		$tpl_vars->datas = $model->getData($filter_sel,$search,$limitStart,$limitEnd);
++		$tpl_vars->datas = $model->getData($filter_sel,$search,$limitStart,$itemsPerPage);
+         $tpl_vars->count = $model->getTotal($filter_sel,$search);
+ 		$tpl_vars->itemsPerPage = $itemsPerPage;
+ 		$tpl_vars->currPage = $currpage;
+diff --git a/wp-content/plugins/masvalor/app/doctors_activated_view.php b/wp-content/plugins/masvalor/app/doctors_activated_view.php
+index 6b24eb3..c591cee 100755
+--- a/wp-content/plugins/masvalor/app/doctors_activated_view.php
++++ b/wp-content/plugins/masvalor/app/doctors_activated_view.php
+@@ -68,7 +68,7 @@ a{
+ 								     <!--option value="identity_number"><?php echo __('DNI') ?></option>
+ 									 <option value="main_contact_mail"><?php echo __('E-mail') ?></option-->
+ 								</select>	
+-							   <button onclick="this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
++							   <button onclick="this.form.action = '<?php echo masvalor_getUrl().'/doctors_activated/' ?>'; this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
+ 							  <button style="padding-top: 2px;" onclick="document.getElementById('search').value='';this.form.getElementById('filter_state').value='-1';this.form.submit();">Reset</button>
+ 						    </div>	
+ 							
+@@ -93,17 +93,19 @@ a{
+ 																
+ 									<tbody>
+ 									
++									
+ 										<?php foreach ( $V->datas as $result ) {?>
+-											<?php if(($result->name != '' && $result->name != null) && ($result->lastname != null && $result->lastname != '') && 
++											<?php if(true || ($result->name != '' && $result->name != null) && ($result->lastname != null && $result->lastname != '') && 
+ 											          ($result->name_dis != '' && $result->name_dis != null) && ($result->title != null && $result->title != '') &&
+ 													  ($result->title_tesis != '' && $result->title_tesis != null)&& ($result->identity_number != '' && $result->identity_number != null) &&
+ 													  ($result->title_grad != '' && $result->title_grad != null) ) { ?>					
+ 												<tr style="background-color:#eeeeee;">
+ 													<td>
+-														 
+-														 <a href="/?page_id=425/doctor-profile/&cid=<?php $result->userid; ?>" target="_blank" ><?php echo $result->name;?></a>
++														 <a href="/?page_id=425/doctor-profile/&cid=<?php echo $result->userid; ?>" target="_blank" ><?php echo $result->name;?></a>
++													</td>
++													<td>
++														 <a href="/?page_id=425/doctor-profile/&cid=<?php echo $result->userid; ?>" target="_blank" ><?php echo $result->lastname;?></a>
+ 													</td>
+-													<td><?php echo $result->lastname;?></td>
+ 													<td><?php echo $result->name_dis;?></td>
+ 													<td><?php echo $result->title;?></td>
+ 													<td align="center"> 
+@@ -117,28 +119,35 @@ a{
+ 								  </tbody>
+ 							
+ 							  </table>
++							  
++							<div class="paginator" style="margin-left:16px">
++									<?php 
++									$pages = ceil($V->count/$V->itemsPerPage);
++									if ($pages > 1)
++										for ($i=1;$i<=$pages;$i++){
++											$pageLink = masvalor_getUrl().'/doctors_activated/&limitstart='.(($i-1)*$V->itemsPerPage);
++											if ($V->currPage != $i)
++												$href = '<a href='.$pageLink.'>'.$i.'</a>';
++											else
++												$href = $i;
++											if ($i==1)
++												echo $href;
++											else
++												echo ' - '.$href;
++										}
++									?>
++									
++									<div style="margin-top: 10px">
++										Registros: <?php echo $V->count; ?>	
++									</div>
++							</div>
++							  
+ 						</td>
+ 					</tr>		
+ 				   </table> 
+ 				   				   
+-					<div class="paginator" style="margin-left:35px">
+-							<?php 
+-							$pages = ceil($V->count/$V->itemsPerPage);
+-							if ($pages > 1)
+-								for ($i=1;$i<=$pages;$i++){
+-									$pageLink = masvalor_getUrl().'/doctors_activated/&limitstart='.(($i-1)*$V->itemsPerPage);
+-									if ($V->currPage != $i)
+-										$href = '<a href='.$pageLink.'>'.$i.'</a>';
+-									else
+-										$href = $i;
+-									if ($i==1)
+-										echo $href;
+-									else
+-										echo ' - '.$href;
+-								}
+-							?>
+-					</div>
+-				   
++
++					
+ 					<input type="hidden" name="cid" value="" />	
+ 					<input type="hidden" name="userid" id="userid" value=""/>
+ 					<input type="hidden" name="task" value="" />
+diff --git a/wp-content/plugins/masvalor/app/doctors_page.php b/wp-content/plugins/masvalor/app/doctors_page.php
+index 60fb79e..75173d6 100755
+--- a/wp-content/plugins/masvalor/app/doctors_page.php
++++ b/wp-content/plugins/masvalor/app/doctors_page.php
+@@ -55,14 +55,13 @@ class doctors_page extends tina_mvc_base_page_class {
+ 		$limitEnd = $limitStart + $itemsPerPage;
+ 		$currpage = $limitEnd/$itemsPerPage;
+ 		
+-		
+ 		$tpl_vars = new stdClass; // for the 'view'
+ 		
+ 		$tina_mvcv_pages = get_option("tina_mvc_pages");
+ 		$tpl_vars->pageid = $tina_mvcv_pages['masvalor']['page_id'];
+ 			
+-		$tpl_vars->datas = $model->getData($filter_sel,$search,$limitStart,$limitEnd);
+-		$tpl_vars->unactived = $model->getUnactived($filter_sel,$search,$limitStart,$limitEnd);
++		$tpl_vars->datas = $model->getData($filter_sel,$search,$limitStart,$itemsPerPage);
++		$tpl_vars->unactived = $model->getUnactived($filter_sel,$search,$limitStart,$itemsPerPage);
+         $tpl_vars->count = $model->getTotal($filter_sel,$search);
+ 		$tpl_vars->datasExport = $model->getDataExportar();
+ 		$tpl_vars->itemsPerPage = $itemsPerPage;
+diff --git a/wp-content/plugins/masvalor/app/doctors_view.php b/wp-content/plugins/masvalor/app/doctors_view.php
+index 3d8746a..f3bae09 100755
+--- a/wp-content/plugins/masvalor/app/doctors_view.php
++++ b/wp-content/plugins/masvalor/app/doctors_view.php
+@@ -104,7 +104,6 @@ a{
+ 									 <option value="prt.title"><?php echo __('T&iacute;tulo') ?></option>
+ 									 <option value="actived"><?php echo __('Estado') ?></option>
+ 								</select>	
+-								<BR>
+ 							
+ 							   <button onclick="this.form.action = '<?php echo masvalor_getUrl().'/doctors/' ?>'; this.form.submit();" style="padding-top: 2px;"><?php echo __('Buscar') ?></button> 
+ 							  <button style="padding-top: 2px;" onclick="document.getElementById('search').value='';this.form.getElementById('filter_state').value='-1';this.form.submit();">Reset</button>
+@@ -199,7 +198,7 @@ a{
+ 										for ($i=1;$i<=$pages;$i++){
+ 											$pageLink = masvalor_getUrl().'/doctors/&limitstart='.(($i-1)*$V->itemsPerPage);
+ 											
+-											ECHO "<BR>".$pageLink. "<BR>";
++											//ECHO "<BR>".$pageLink. "<BR>";
+ 											
+ 											if ($V->currPage != $i)
+ 												$href = '<a href='.$pageLink.'>'.$i.'</a>';
+@@ -211,10 +210,14 @@ a{
+ 												echo ' - '.$href;
+ 										}
+ 									?>
++									
++									<div style="margin-top: 10px">
++										Registros: <?php echo (int)$V->count; ?>	
++									</div>
+ 							</div>
+ 							  
+ 							  
+-							Registros: <?php echo count($V->datas); ?>
++							
+ 
+ 							
+ 						</td>
+diff --git a/wp-content/plugins/masvalor/app/includes/contracts/index.php b/wp-content/plugins/masvalor/app/includes/contracts/index.php
+old mode 100755
+new mode 100644
+diff --git a/wp-content/plugins/masvalor/app/models/doctor_profile_model.php b/wp-content/plugins/masvalor/app/models/doctor_profile_model.php
+index 1cd2f0a..b45951f 100755
+--- a/wp-content/plugins/masvalor/app/models/doctor_profile_model.php
++++ b/wp-content/plugins/masvalor/app/models/doctor_profile_model.php
+@@ -36,7 +36,7 @@ class doctorProfileModel {
+ 		$headers .= "Content-type: text/html\r\n";
+ 		$headers .= "From: ".$adminemail."\r\n"; // remitente
+ 		$headers .= "Return-Path:".$adminemail."\r\n"; // return-path*/
+-		$asunto ="Activación Usuario +VALOR.Doc";
++		$asunto ="Activaciï¿½n Usuario +VALOR.Doc";
+ 		mail($email,$asunto,$texto,$headers);
+ 	}
+ 	
+@@ -54,9 +54,9 @@ class doctorProfileModel {
+ 		if($type == 'rejected')
+ 			$asunto ="Rechazo en +Valor.doc";
+ 		elseif($type == 'desactived')
+-			$asunto = "Desactivación en +Valor.doc";
++			$asunto = "DesactivaciÃ³n en +Valor.doc";
+ 		elseif($type == 'pending')
+-			$asunto = "Desactivación de cuenta +VALOR.Doc";
++			$asunto = "DesactivaciÃ³n de cuenta +VALOR.Doc";
+ 			
+ 		
+ 		$texto = file_get_contents(home_url().'/wp-content/plugins/masvalor/app/includes/mailing/desactivacion.php?date='.date("d-m-Y").'&email='.$email.'&name='.$name.'&lastname='.$lastname);
+@@ -97,7 +97,7 @@ class doctorProfileModel {
+ 	
+ 	function give_me_all_zones() {
+ 		global $wpdb;
+-		$sql_query = 'select id,name from '.$wpdb->prefix.'masvalor_zones order by name';
++		$sql_query = 'select id, name from '.$wpdb->prefix.'masvalor_zones order by name';
+ 		
+ 		return $wpdb->get_results($sql_query);
+ 	}
+@@ -418,7 +418,7 @@ class doctorProfileModel {
+ 		
+ 		$imageFile  = $_FILES['identity_image_file'];
+ 
+-		if ((int)$imageFile['size'] <= (int)$parameters['identity_image_size'] && !strstr(utf8_decode($imageFile['name']),'ñ') && !strstr(utf8_decode($imageFile['name']),'Ñ')){
++		if ((int)$imageFile['size'] <= (int)$parameters['identity_image_size'] && !strstr(utf8_decode($imageFile['name']),'ï¿½') && !strstr(utf8_decode($imageFile['name']),'ï¿½')){
+ 			if ($imageFile['name'] != '' && $imageFile['name'] != null){
+ 				
+ 				$identity_image = masvalor_doUpload($userid,$imageFile);
+@@ -430,7 +430,7 @@ class doctorProfileModel {
+ 			echo __("Su imagen de identidad debe tener como m&aacute;ximo un tama&ntilde;o de ").$parameters['identity_image_size']." bytes y no puede contener caract&eacute;res extra&ntilde;os.";
+ 		
+ 		$cvFile  = $_FILES['cv_file'];
+-		if ($cvFile['size'] <= $parameters['cv_size'] && !strstr(utf8_decode($imageFile['name']),'ñ') && !strstr(utf8_decode($imageFile['name']),'Ñ')){
++		if ($cvFile['size'] <= $parameters['cv_size'] && !strstr(utf8_decode($imageFile['name']),'ï¿½') && !strstr(utf8_decode($imageFile['name']),'ï¿½')){
+ 			if ($cvFile['name'] != '' && $cvFile['name'] != null)
+ 				$cv = masvalor_doUpload($userid,$cvFile);
+ 			else
+diff --git a/wp-content/plugins/masvalor/app/models/doctors_activated_model.php b/wp-content/plugins/masvalor/app/models/doctors_activated_model.php
+index 5a21ade..0ba92fb 100755
+--- a/wp-content/plugins/masvalor/app/models/doctors_activated_model.php
++++ b/wp-content/plugins/masvalor/app/models/doctors_activated_model.php
+@@ -18,21 +18,10 @@
+  */
+ class doctors_activatedModel {    //$date_from,$date_to
+     
+-   public function getData($filter_sel,$search,$limitStart,$limitEnd){
++   public function getData($filter_sel,$search,$limitStart,$itemsPerPage){
+ 		global $wpdb;
+-	
+-		
+-/* 		$sql = 'SELECT  pr.*,
+-		        (SELECT prt.title FROM '.$wpdb->prefix.'masvalor_profiletitles prt 
+-						                  WHERE prt.userid = pr.userid AND type = 0 AND prt.ppal = 1 ) as title,
+-				(SELECT sub.name FROM '.$wpdb->prefix.'masvalor_subdisciplines sub,'.$wpdb->prefix.'masvalor_rel_user_subdisciplines rdis
+-						         WHERE rdis.userid = pr.userid        AND
+-								       rdis.subdisciplineid = sub.id AND 
+-									   rdis.ppal =1
+-						)as name_subdis						  
+-        		FROM '.$wpdb->prefix.'masvalor_profiles pr WHERE  pr.actived = 0';  */
+ 							  
+- 		$sql = 'SELECT  u.user_login as username,mu.*,
++ 		$sql = 'SELECT  u.user_login as username, mu.*,
+ 		                (SELECT dis.name
+ 						        FROM '.$wpdb->prefix.'masvalor_disciplines dis,'.$wpdb->prefix.'masvalor_rel_user_subdisciplines rld,'.$wpdb->prefix.'masvalor_subdisciplines subs
+ 								WHERE  rld.subdisciplineid = subs.id AND 
+@@ -69,15 +58,22 @@ class doctors_activatedModel {    //$date_from,$date_to
+ 							WHEN 4 THEN "Rechazado"
+ 						END as actived
+ 						FROM '.$wpdb->prefix.'masvalor_profiles mu,'.$wpdb->prefix.'users u
+-						        WHERE u.id = mu.userid AND
+-									  mu.actived = 0'; 	 
+-		
++						WHERE u.id = mu.userid AND mu.actived = 0
++						HAVING CHAR_LENGTH(name) > 0 
++						AND CHAR_LENGTH(lastname) > 0 
++						AND CHAR_LENGTH(name_dis) > 0 
++						AND CHAR_LENGTH(title) > 0 
++						AND CHAR_LENGTH(title_tesis) > 0 
++						AND CHAR_LENGTH(identity_number) > 0 
++						AND CHAR_LENGTH(title_grad) > 0
++ 						Order By lastname, name'; 	
++ 	 		
+ 		//Filtramos, en caso de ser necesario
+ 		if($search) 
+ 			$sql .= " AND LOWER( {$filter_sel} ) LIKE '%".$search."%'";
+ 		
+-		if ($limitStart !== null && $limitStart !== '' && $limitEnd !== null && $limitEnd !== '' )
+-			$sql .=" LIMIT {$limitStart},{$limitEnd}";	
++		if ($limitStart !== null && $limitStart !== '' && $itemsPerPage !== null && $itemsPerPage !== '' )
++			$sql .=" LIMIT {$limitStart},{$itemsPerPage}";	
+ 		
+ 		$data = $wpdb->get_results($sql);
+ 		
+@@ -86,6 +82,8 @@ class doctors_activatedModel {    //$date_from,$date_to
+    }
+    
+     public function getTotal($filter_sel,$search){
++    	
++    	/*
+ 		global $wpdb;
+ 		$sql = 'SELECT  COUNT(*) as count FROM '.$wpdb->prefix.'masvalor_profiles,'.$wpdb->prefix.'users u WHERE u.ID = userid';  
+ 
+@@ -93,6 +91,14 @@ class doctors_activatedModel {    //$date_from,$date_to
+ 		if($search) 
+ 			$sql .= " AND LOWER( {$filter_sel} ) LIKE '%".$search."%'";
+ 		
++		$sql .= " HAVING CHAR_LENGTH(name) > 0 
++						AND CHAR_LENGTH(lastname) > 0 
++						AND CHAR_LENGTH(name_dis) > 0 
++						AND CHAR_LENGTH(title) > 0 
++						AND CHAR_LENGTH(title_tesis) > 0 
++						AND CHAR_LENGTH(identity_number) > 0 
++						AND CHAR_LENGTH(title_grad) > 0";
++		
+ 		$data = $wpdb->get_results($sql);
+ 		
+ 		foreach ($data as $aData):
+@@ -100,7 +106,10 @@ class doctors_activatedModel {    //$date_from,$date_to
+ 		endforeach;
+ 		return 0;	
+ 		
+-
++		*/    	
++    	
++    	return count($this->getData($filter_sel,$search,0,1000000));
++    	
+    }
+    
+    	function sendNotificationActived($email){
+diff --git a/wp-content/plugins/masvalor/app/models/doctors_model.php b/wp-content/plugins/masvalor/app/models/doctors_model.php
+index d2574e9..caac702 100755
+--- a/wp-content/plugins/masvalor/app/models/doctors_model.php
++++ b/wp-content/plugins/masvalor/app/models/doctors_model.php
+@@ -18,7 +18,7 @@
+  */
+ class doctorsModel {    //$date_from,$date_to
+     
+-   public function getData($filter_sel,$search,$limitStart,$limitEnd){
++   public function getData($filter_sel,$search,$limitStart,$itemsPerPage){
+ 		global $wpdb;
+ 		
+ 		
+@@ -83,8 +83,8 @@ class doctorsModel {    //$date_from,$date_to
+ 		if($_POST["order"] != '' && $_POST["order"] != null)
+ 			$sql .= ' order by '.$_POST["order"].' '.$_POST["order_dir"];
+ 		
+-		if ($limitStart !== null && $limitStart !== '' && $limitEnd !== null && $limitEnd !== '' )
+-			$sql .=" LIMIT {$limitStart},{$limitEnd}";	
++		if ($limitStart !== null && $limitStart !== '' && $itemsPerPage !== null && $itemsPerPage !== '' )
++			$sql .=" LIMIT {$limitStart},{$itemsPerPage}";	
+ 
+ 		$data = $wpdb->get_results($sql);
+ 		
+@@ -105,7 +105,7 @@ class doctorsModel {    //$date_from,$date_to
+ 		return $data;
+    }
+ 
+-	public function getUnactived($filter_sel,$search,$limitStart,$limitEnd){
++	public function getUnactived($filter_sel,$search,$limitStart,$itemsPerPage){
+ 		global $wpdb;
+ 	
+ 		
+@@ -121,8 +121,8 @@ class doctorsModel {    //$date_from,$date_to
+ 		if($search) 
+ 			$sql .= " AND LOWER( {$filter_sel} ) LIKE '%".$search."%'";
+ 		
+-		if ($limitStart !== null && $limitStart !== '' && $limitEnd !== null && $limitEnd !== '' )
+-			$sql .=" LIMIT {$limitStart},{$limitEnd}";	
++		if ($limitStart !== null && $limitStart !== '' && $itemsPerPage !== null && $itemsPerPage !== '' )
++			$sql .=" LIMIT {$limitStart},{$itemsPerPage}";	
+ 		
+ 		$unactived = $wpdb->get_results($sql);
+ 		
+diff --git a/wp-content/plugins/masvalor/app/models/masvalor_utils.php b/wp-content/plugins/masvalor/app/models/masvalor_utils.php
+index 4473785..c1da79d 100755
+--- a/wp-content/plugins/masvalor/app/models/masvalor_utils.php
++++ b/wp-content/plugins/masvalor/app/models/masvalor_utils.php
+@@ -242,6 +242,7 @@ function masvalor_getUrl(){
+ 		$tina_mvcv_pages = get_option("tina_mvc_pages");
+ 		$pageid = $tina_mvcv_pages['masvalor']['page_id'];	
+ 		return home_url().'/?page_id='.$pageid;
++		
+ }
+ 
+ 
+@@ -838,7 +839,7 @@ class mv_comboUtils {
+ 	//Contruct Universities combo
+ 	public function getUniversities($selected,$id){
+ 			global $wpdb;
+-			$sql = 'SELECT * FROM '.$wpdb->prefix.'masvalor_universities;';
++			$sql = 'SELECT * FROM '.$wpdb->prefix.'masvalor_universities Order By name;';
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			
+ 			ob_start();
+@@ -888,7 +889,7 @@ class mv_comboUtils {
+ 	//Contruct Disciplines group combo
+ 	public function getDisciplinesGroups($selected,$id){
+ 			global $wpdb;
+-			$sql = 'SELECT id,name FROM '.$wpdb->prefix.'masvalor_disciplines;';
++			$sql = 'SELECT id,name FROM '.$wpdb->prefix.'masvalor_disciplines Order By name;';
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			ob_start();
+ 			?>
+@@ -910,7 +911,7 @@ class mv_comboUtils {
+ 	
+ 	public function getDisciplinesSubGroups($selected,$id,$id_group){
+ 			global $wpdb;
+-			$sql = 'SELECT id,name FROM '.$wpdb->prefix.'masvalor_subdisciplines where id_discipline='.$id_group;
++			$sql = 'SELECT id, name FROM '.$wpdb->prefix.'masvalor_subdisciplines where id_discipline='.$id_group . " Order By name";
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			ob_start();
+ 			?>
+@@ -933,7 +934,7 @@ class mv_comboUtils {
+ 	//Contruct Disciplines group combo
+ 	public function getDisciplines($selected,$id,$id_sub_group){
+ 			global $wpdb;
+-			$sql = 'SELECT name,id FROM '.$wpdb->prefix.'masvalor_disciplines WHERE id_subbranch='.$id_sub_group;
++			$sql = 'SELECT name, id FROM '.$wpdb->prefix.'masvalor_disciplines WHERE id_subbranch='.$id_sub_group . " Order By name";
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			ob_start();
+ 			?>
+@@ -1029,9 +1030,9 @@ class mv_comboUtils {
+ 	public function getMaritalStatus($selected,$id){
+ 	
+ 			ob_start();
+-			$maritalStatus[] = 'Soltero';
+ 			$maritalStatus[] = 'Casado';
+ 			$maritalStatus[] = 'Divorciado';
++			$maritalStatus[] = 'Soltero';
+ 			$maritalStatus[] = 'Viudo';
+ 		
+ 			?>
+@@ -1105,7 +1106,7 @@ class mv_comboUtils {
+ 	public function getCountries($selected,$id='country',$all = null){
+ 			
+ 			global $wpdb;
+-			$sql = 'SELECT name FROM '.$wpdb->prefix.'masvalor_countries;';
++			$sql = 'SELECT name FROM '.$wpdb->prefix.'masvalor_countries Order By name;';
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			
+ 			ob_start();
+@@ -1138,7 +1139,7 @@ class mv_comboUtils {
+ 	public function getStates($selected,$country,$id='state',$all = null){
+ 			
+ 			global $wpdb;
+-			$sql = 'SELECT state FROM '.$wpdb->prefix.'masvalor_states WHERE country = "'.$country.'";';
++			$sql = 'SELECT state FROM '.$wpdb->prefix.'masvalor_states WHERE country = "'.$country.'" Order By state;';
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			ob_start();
+ 			
+@@ -1174,7 +1175,7 @@ class mv_comboUtils {
+ 	public function getCities($selected,$country,$state,$id='city',$all = null){
+ 			
+ 			global $wpdb;
+-			$sql = 'SELECT city FROM '.$wpdb->prefix.'masvalor_cities WHERE state ="'.$state.'" AND country ="'.$country.'" ;';
++			$sql = 'SELECT city FROM '.$wpdb->prefix.'masvalor_cities WHERE state ="'.$state.'" AND country ="'.$country.'" Order By city;';
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			ob_start();
+ 			
+@@ -1209,7 +1210,7 @@ class mv_comboUtils {
+ 	public function getDoctors($selected,$id='doctors'){
+ 			
+ 			global $wpdb;
+-			$sql = 'SELECT userid,CONCAT(lastname," - ",name)as name FROM '.$wpdb->prefix.'masvalor_profiles WHERE actived = 1';
++			$sql = 'SELECT userid, CONCAT(lastname," - ",name) as name FROM '.$wpdb->prefix.'masvalor_profiles WHERE actived = 1 ORDER BY name';
+ 			$datas = $wpdb->get_results($sql,OBJECT_K);
+ 			ob_start();
+ 			
+diff --git a/wp-content/plugins/masvalor/app/models/register_doctor_model.php b/wp-content/plugins/masvalor/app/models/register_doctor_model.php
+index 40f48a8..7a0cef6 100755
+--- a/wp-content/plugins/masvalor/app/models/register_doctor_model.php
++++ b/wp-content/plugins/masvalor/app/models/register_doctor_model.php
+@@ -152,7 +152,7 @@ class registerDoctorModel {
+     global $wpdb;
+ 		
+     $sql ='SELECT  COUNT(*) FROM '.$wpdb->prefix.'masvalor_profiles
+-	                  WHERE userid == '.$user_id;  
++	                  WHERE userid = '.$user_id;  
+ 	
+ 	$data = $wpdb->get_var($sql);
+     
+diff --git a/wp-content/plugins/masvalor/app/searche_view.php b/wp-content/plugins/masvalor/app/searche_view.php
+index 07f20d1..cb814e9 100644
+--- a/wp-content/plugins/masvalor/app/searche_view.php
++++ b/wp-content/plugins/masvalor/app/searche_view.php
+@@ -679,7 +679,7 @@ function isChecked($estado){
+ 													</tr>
+ 													
+ 													<tr>
+-														<td class="key" style="padding-top: 2px;vertical-align: top;"><?php echo __('Subdisciplinas Requeridas') ?></td>
++														<td class="key" style="padding-top: 2px;vertical-align: top;"><?php echo __('Disciplinas Requeridas') ?></td>
+ 														<td><input id="addDiscipline" onclick="show_popup_diciplines()" type="button"  value ="Agregar" /></td>
+ 													</tr>
+ 													

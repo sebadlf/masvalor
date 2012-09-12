@@ -414,20 +414,29 @@ class doctorProfileModel {
 				$this->pending($userid); */
 		}
 		
+		
+		
 		$this->save_zones($userid);
 		
 		$imageFile  = $_FILES['identity_image_file'];
+		
+		//print_r($imageFile);
 
 		if ((int)$imageFile['size'] <= (int)$parameters['identity_image_size'] && !strstr(utf8_decode($imageFile['name']),'�') && !strstr(utf8_decode($imageFile['name']),'�')){
 			if ($imageFile['name'] != '' && $imageFile['name'] != null){
 				
 				$identity_image = masvalor_doUpload($userid,$imageFile);
+				
+				echo $identity_image;
+				
 				}
 			else 
 				$identity_image = $parameters['identity_image'];
 			}
 		else 
 			echo __("Su imagen de identidad debe tener como m&aacute;ximo un tama&ntilde;o de ").$parameters['identity_image_size']." bytes y no puede contener caract&eacute;res extra&ntilde;os.";
+		
+		
 		
 		$cvFile  = $_FILES['cv_file'];
 		if ($cvFile['size'] <= $parameters['cv_size'] && !strstr(utf8_decode($imageFile['name']),'�') && !strstr(utf8_decode($imageFile['name']),'�')){

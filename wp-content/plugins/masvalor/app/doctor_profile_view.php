@@ -627,7 +627,7 @@ function addTesis(title,theme,publication_date,file,fileName,link,disciplineid,d
 			return true;
 		}
   		else {
-		alert("<?php echo __('Este elemento ya ha sido agregado') ?>");
+			alert("<?php echo __('Este elemento ya ha sido agregado') ?>");
 		return false;
 		}
 }
@@ -852,11 +852,30 @@ function validateFields(step){
 			msg.push('<?php echo __('Debe seleccionar su estado civil.');?>'); 
 			error = true;
 			 }
+
 		var str = jQuery("#identity_image_file").val();
 		if (str.indexOf("ñ") != -1){
 			msg.push('<?php echo __('El nombre de los archivos a subir no pueden contener caracteres raros.');?>'); 
 			error = true;
 			 }		
+
+		var str = jQuery("#cv_file").val();
+		if (str == ''){
+			if (jQuery("#cv").val() == ''){
+				msg.push('<?php echo __('Debe agregar un archivo de CV.');?>'); 
+				error = true;
+			}
+			
+		} else if (str.indexOf("ñ") != -1){
+			msg.push('<?php echo __('El nombre del CV archivos no puede contener caracteres raros.');?>'); 
+			error = true;
+		}		
+
+		if (jQuery("#tableSelectedTesis").html().length <= 404){
+			msg.push("<?php echo __('Debe ingresar al menos una Tesis de Postgrado (Datos Personales).');?>");
+			error = true;
+		}
+			 
 			
 		if (error){
 			alert(msg.join('\n'));
@@ -865,6 +884,9 @@ function validateFields(step){
 		else
 			return true;
 	} else if(step == 'step2') { 
+
+		error = false;
+		
 		if(jQuery("#tableSelectedEducationPos").html().length > 428) {
 			var have_doctor_title = document.getElementById('have_doctor_title');
 			
@@ -873,15 +895,21 @@ function validateFields(step){
 				error = true;
 			}
 			
-		if ($("input[name=ppal_disc]:checked").size() != 1) {
-			msg.push("<?php echo __('Debe elegir una disciplina principal.');?>");
+			if ($("input[name=ppal_disc]:checked").size() != 1) {
+				msg.push("<?php echo __('Debe elegir una disciplina principal.');?>");
+				error = true;
+			}
+	
+		}
+
+		if (jQuery("#tableSelectedTesis").html().length <= 404){
+			msg.push("<?php echo __('Debe ingresar al menos una Tesis de Postgrado.');?>");
 			error = true;
 		}
-			
-			if(error) {
-				alert(msg.join('\n'));
-				return false;
-			}
+		
+		if(error) {
+			alert(msg.join('\n'));
+			return false;
 		}
 	} else {
 		if (isNaN(jQuery("#expected_gross_mensual_remuneration").val())){
@@ -1300,17 +1328,20 @@ function give_me_doctor_state($id_doctor) {
 																			$imgSrc='wp-content/plugins/masvalor/app/includes/sinfoto.jpg';
 																		?>
 																		<div style="margin-left: 3px;">
-																			<img src="<?php echo $imgSrc; ?>"  HEIGHT=64 alt="profile_image"></img>	
+																			<img src="<?php echo $imgSrc; ?>" HEIGHT=64 alt="profile_image"></img>	
 																	    </div>
 																	</td>
 																		
 																</tr>
 																
+																
+																
 																<tr>
-																	<td class="key"><?php echo __('Cargue su Cv'); ?></td>
+																	<td class="key"><?php echo __('Cargue su Cv'); ?>(*)</td>
 																	<td style="float:left;">
+																						
 																	  <input type="hidden" name="cv_size" id="cv_size" value="<?php echo $V->cv_size; ?>">
-																	  <input type="hidden" name="cv" value="<?php echo $V->data->cv; ?>" >
+																	  <input type="hidden" name="cv" id="cv" value="<?php echo $V->data->cv; ?>" >
 																	  <input size="30"  onchange="checkExtension(this,'.pdf')" type="file" id="cv_file" name="cv_file"/>
 																	</td>
 																</tr>
@@ -1320,9 +1351,9 @@ function give_me_doctor_state($id_doctor) {
 																	<td >
 																		<?php 
 																		if ($V->data->cv != null && $V->data->cv != ''){
-																			$linkCv='wp-content/uploads/profiles/'.$V->username.'/'.$V->data->cv;
+																			$linkCv='wp-content/uploads/profiles/'.$V->username.'/'.$V->data->cv;																		
 																		?>
-																			<a style="margin-left: 3px;" style="color:#6899D3;" target="_blank" href="<?php echo $linkCv;?>" >
+																			<a style="margin-left: 3px;" style="color:#6899D3;" Id="VerCV" target="_blank" href="<?php echo $linkCv;?>" >
 																			  <img alt="<?php echo __('Ver CV') ?>"  WIDTH="32" HEIGHT="32" title="<?php echo __('Ver CV') ?>" src="wp-content/plugins/masvalor/app/includes/image/save-pdf.png" />
 																			</a>	
 																		<?php } ?>

@@ -66,12 +66,12 @@ function masvalor_doUpload($userid,$file){
 		// Creo index.html
 		$ar = fopen($index_file,"a") or die("Problemas en la creacion de archivo index.html.");
 	}
-		
+	
 	remove_filter('upload_dir', 'my_upload_dir');
 	$aux = explode("/",$upload['url']);
 	$uploaded_name = $aux[sizeof($aux)-1];
-	//return $uploaded_name;
-	return "";
+	return $uploaded_name;
+	//return "";
 }
 
 
