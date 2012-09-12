@@ -204,7 +204,10 @@ function checkUserTypeById($userid,$usertype){
 //Checks if a company have the user assigned as applicant or candidate
 function masvalor_companyCanViewUser($companyid,$userid){
 	global $wpdb;
-	$sql = 'SELECT COUNT(sr.id) as count FROM '.$wpdb->prefix.'masvalor_searchresults sr,'.$wpdb->prefix.'masvalor_companysearchs cs WHERE sr.searchid = cs.id AND cs.userid ='.$companyid.' AND sr.userid='.$userid.' AND ( type = 0 or type = 1 );';
+	$sql = 'SELECT COUNT(sr.id) as count FROM '.$wpdb->prefix.'masvalor_searchresults sr,'.$wpdb->prefix.'masvalor_companysearchs cs WHERE sr.searchid = cs.id AND cs.userid ='.$companyid.' AND sr.userid='.$userid.' AND ( type = 0 or type = 1 or type = 2);';
+	
+	//echo $sql;
+	
 	$datas = $wpdb->get_results($sql,OBJECT_K);
 	$count = 0;
 	foreach ($datas as $data):

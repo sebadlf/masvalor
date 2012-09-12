@@ -27,7 +27,7 @@ class doctor_profile_page extends tina_mvc_base_page_class {
 				$msg = $model->save($step,$_POST);
 			}
 			else{
-			    $msg = "El número de dni o el cuit ya existen";
+			    $msg = "El nÃºmero de dni o el cuit ya existen";
 			}
 			
 			//$step = $_POST['step'];
@@ -74,6 +74,8 @@ class doctor_profile_page extends tina_mvc_base_page_class {
 		$userid = $_GET['cid'];
 		$isCompany = false;
 		$isAdmin = false;
+		
+		
 		if (is_null($userid) || $userid == ''){
 			if (!checkUserType($current_user->user_login,'doctor')){
 			   if (!checkUserType($current_user->user_login,'masvalor-admin'))
@@ -84,15 +86,17 @@ class doctor_profile_page extends tina_mvc_base_page_class {
 			else
 				$userid = $current_user->ID;
 			}
-		else
-			if ( checkUserType($current_user->user_login,'company') && masvalor_companyCanViewUser($current_user->ID,$userid) )
+		else{
+		
+			if ( checkUserType($current_user->user_login,'company') && masvalor_companyCanViewUser($current_user->ID,$userid) ) {
 				$isCompany = true;
-			else
-				if (checkUserType($current_user->user_login,'masvalor-admin'))
+			} else if (checkUserType($current_user->user_login,'masvalor-admin')) {
 					$isAdmin = true;
-				else
-					die(__('Invalid Access'));
-	
+		    } else {
+				die(__('Invalid Access'));
+		    }
+    	}
+    	
         $tpl_vars = new stdClass; // for the 'view'	
 		$tpl_vars->combos = new mv_comboUtils;
 		$tpl_vars->checkbox = new mv_checkboxUtils;
