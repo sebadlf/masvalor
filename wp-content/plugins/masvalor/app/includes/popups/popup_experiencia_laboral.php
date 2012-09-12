@@ -32,17 +32,15 @@ function validateFields(){
 		 error = true;
 		 }
 	if (jQuery("#from_date").val() == ''){
-		msg.push('Debe ingresar la fecha en la que ingres\u00f3.');
+		msg.push('Debe ingresar la fecha Desde');
 		error = true;
-		 }
-	
-	if (!validar_from()){ 
-		 msg.push('Debe ingresar la Fecha formateada dd-mm-aaaa.');
+	} else if (!validar_from()){ 
+		 msg.push('Debe ingresar la Fecha Desde formateada dd-mm-aaaa.');
 		 error = true;
 	}
 
     if (!validar_to()){ 
-		 msg.push('Debe ingresar la Fecha formateada dd-mm-aaaa.');
+		 msg.push('Debe ingresar la Fecha Hasta formateada dd-mm-aaaa.');
 		 error = true;
 	}	
 	
@@ -95,17 +93,23 @@ function validar_from()
  
  function validar_to()
  {
- 	var aux = document.getElementById("to_date").value;
-	var new_fecha = aux.split('-');
-	var dia = new_fecha[0];
-	var mes = new_fecha[1];
-	var anio = new_fecha[2];
-    	
-	if(dia.length == 2)
-		if(mes.length == 2)
-		  if(anio.length == 4)
-				return true;
-					
+	if (document.getElementById("to_date").value != ''){
+	 
+	 	var aux = document.getElementById("to_date").value;
+		var new_fecha = aux.split('-');
+		var dia = new_fecha[0];
+		var mes = new_fecha[1];
+		var anio = new_fecha[2];
+	    	
+		if(dia.length == 2)
+			if(mes.length == 2)
+			  if(anio.length == 4)
+					return true;
+
+		} else {
+		 return true;
+	 }
+		 
 	return false;	 	 	 	
  }
  

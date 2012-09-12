@@ -385,14 +385,14 @@ function show_popup_tesis_postgrado() {
 
 function show_popup_experiencia_laboral() {
 	var src = "wp-content/plugins/masvalor/app/includes/popups/popup_experiencia_laboral.php";
-    activeModal = jQuery.modal('<iframe src="' + src + '" height="260" width="650" style="border:0">', {
+    activeModal = jQuery.modal('<iframe src="' + src + '" height="360" width="650" style="border:0">', {
 	opacity:80,
 	overlayCss: {backgroundColor:"#000"},
 	closeHTML:"",
 	containerCss:{
 		backgroundColor:"#fff",
 		borderColor:"#fff",
-		height:264,
+		height:364,
 		padding:0,
 		width:650,
 	},
@@ -870,8 +870,8 @@ function validateFields(step){
 			msg.push('<?php echo __('El nombre del CV archivos no puede contener caracteres raros.');?>'); 
 			error = true;
 		}		
-
-		if (jQuery("#tableSelectedTesis").html().length <= 404){
+		
+		if (jQuery("#tableSelectedTesis tbody").html().length <= 100){
 			msg.push("<?php echo __('Debe ingresar al menos una Tesis de Postgrado (Datos Personales).');?>");
 			error = true;
 		}
@@ -902,7 +902,7 @@ function validateFields(step){
 	
 		}
 
-		if (jQuery("#tableSelectedTesis").html().length <= 404){
+		if (jQuery("#tableSelectedTesis tbody").html().length <= 100){
 			msg.push("<?php echo __('Debe ingresar al menos una Tesis de Postgrado.');?>");
 			error = true;
 		}
@@ -912,6 +912,12 @@ function validateFields(step){
 			return false;
 		}
 	} else {
+
+		if (jQuery("#tableSelectedTesis tbody").html().length <= 100){
+			msg.push("<?php echo __('Debe ingresar al menos una Tesis de Postgrado (Datos Personales).');?>");
+			error = true;
+		}
+		
 		if (isNaN(jQuery("#expected_gross_mensual_remuneration").val())){
 			msg.push('<?php echo __('El campo remuneracion es numerico.');?>'); 
 			error = true;
