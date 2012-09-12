@@ -52,7 +52,7 @@ class searcheModel {
    }
    
     public function getPostulants($type,$searchid){	
-
+   	
 		global $wpdb;
 		$sql = 'SELECT (floor((unix_timestamp()-unix_timestamp(p.birth_date)) / (60*60*24*365))) as age,p.name,p.lastname,p.gender,p.userid,u.*, p.cv,sr.date 
 			FROM '.$wpdb->prefix.'masvalor_profiles p,'.$wpdb->prefix.'masvalor_searchresults sr, '.$wpdb->prefix.'users u 

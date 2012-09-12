@@ -67,6 +67,7 @@ class searche_publicModel {
    }
    
    function isApplicat($cid){
+   	
 		global $wpdb;
 		global $current_user;
 		get_currentuserinfo();	
@@ -74,11 +75,14 @@ class searche_publicModel {
 		$sql = 'SELECT COUNT(*) as count FROM '.$wpdb->prefix.'masvalor_searchresults
 		                 WHERE  type = 2 AND searchid = "'.$cid.'" AND userid = "'.$current_user->ID.'"';
 		
+		
+		
 		$data = $wpdb->get_results($sql);
 		$count = 0;
 		foreach ($data as $aData):
 			$count = $aData->count;
 		endforeach;
+		
 		if ($count > 0)
 			return true;	
 		else

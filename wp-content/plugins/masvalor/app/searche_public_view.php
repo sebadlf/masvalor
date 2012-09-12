@@ -500,18 +500,30 @@ function isChecked($estado){
 								<td><div style="margin-top:20px"/></td>
 							</tr>
 							
-							
 							<tr>
 								<?php if ($current_user->ID != null){
 								       if(checkUserType($current_user->user_login,'doctor')){?>
 									<?php if($V->can_post_and_mails) { ?>
+									
+										<?php if ($V->isApplicat == false) { ?>
+									
 											<td>
 												<div style="float:left;padding-bottom: 20px;padding-top: 20px;">	
 													<input type="button"  onclick="saveApplicat('<?php echo $V->data->id;?>')" value="<?php echo __('Postularme') ?>" />
 												</div>	
 											</td>
-									<?php } else { echo '<td><div style="float:left;padding-bottom: 20px;padding-top: 20px;">Su cuenta no se encuentra activada como doctor, no puede postularse a esta busqueda.</div></td>'; } ?>			
-										<?php }?>
+											
+										<?php 
+									       	} else {
+												echo '<td><div style="float:left;padding-bottom: 20px;padding-top: 20px; color:red; font-weight: bold;">Su postulación fue registrada exitosamente.</div></td>';
+											} 
+										?>
+										
+									<?php 
+								       } else { 
+								       		echo '<td><div style="float:left;padding-bottom: 20px;padding-top: 20px;">Su cuenta no se encuentra activada como doctor, no puede postularse a esta busqueda.</div></td>'; 
+								       } ?>			
+									<?php }?>
 								<?php }else{?>
 																	
 									<td class="key"></td>

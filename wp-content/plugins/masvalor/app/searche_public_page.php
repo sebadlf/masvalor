@@ -77,6 +77,7 @@ class searche_public_page extends tina_mvc_base_page_class {
 		$tpl_vars->pageid = $tina_mvcv_pages['masvalor']['page_id'];
 		$cid = $_GET['cid'];
 		$tpl_vars->data = $model->getData($cid);
+		$tpl_vars->isApplicat = $model->isApplicat($cid);
 		$tpl_vars->candidates = $model->getPostulants(0,$cid);
 		$tpl_vars->postulates = $model->getPostulants(1,$cid);
 		$tpl_vars->applicants = $model->getPostulants(2,$cid);
