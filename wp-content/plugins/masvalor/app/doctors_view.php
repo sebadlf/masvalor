@@ -95,8 +95,8 @@ a{
 							  <td style="width:100%;padding-left:26px;"><?php echo __('Filtro') ?>
 								<input type="text" name="search" style="height: 13px;width: 193px;" id="search" value="<?php //echo $this->lists['search'] ?>" class="text_area" title="Filtro"/>   
 								<select name="filter_sel" id="filter_sel" style="height: 26px;padding-top: 2px;">
-								     <option value="mu.name"><?php echo __('Nombre') ?> </option>
 								     <option value="lastname"><?php echo __('Apellido') ?> </option>
+								     <option value="mu.name"><?php echo __('Nombre') ?> </option>
 								     <option value="gender"><?php echo __('Sexo') ?></option>
 									 <option value="mu.state"><?php echo __('Provincia') ?></option>
 									 <option value="dis.name"><?php echo __('Disciplina') ?></option>
